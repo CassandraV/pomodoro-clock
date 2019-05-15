@@ -10,7 +10,7 @@ class Timer extends Component {
       seconds: '00',
       intervalTime: undefined,
       breakTime: 5,
-      onBreak: true,
+      onBreak: false,
       onPause: false,
       started: false,
     };
