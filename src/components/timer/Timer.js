@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './Timer.css'
-// import WorkDoneSound from '../sounds/WorkDoneSound'
+import WorkDoneSound from '../sounds/WorkDoneSound'
 
 class Timer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      minutes: 1*60,
+      minutes: 25*60,
       seconds: '00',
       intervalTime: undefined,
       breakTime: 5,
@@ -18,6 +18,7 @@ class Timer extends Component {
     this.pauseTimer = this.pauseTimer.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
     this.timer = this.timer.bind(this);
+    this.secondsToMinutes = this.secondsToMinutes.bind(this);
   }
 
   timer(){
@@ -56,10 +57,16 @@ class Timer extends Component {
     clearInterval(this.intervalTime);
   }
 
+  secondsToMinutes(time){
+    var minutes = Math.floor(time / 60);
+    var seconds = time - minutes * 60;
+    return(`${minutes}:${seconds.toLocaleString('en-GB',{minimumIntegerDigits: 2})}`)
+  }
+
   render() {
     return(
       <div className="timer">
-        <div className="time">{this.state.minutes}</div>
+        <div className="time">{this.secondsToMinutes(this.state.minutes)}</div>
         {/*<WorkDoneSound></WorkDoneSound>*/}
         <div className="wrap">
           <div className="start-button"><button className="btn btn-start" onClick={this.startTimer}>START</button></div>
