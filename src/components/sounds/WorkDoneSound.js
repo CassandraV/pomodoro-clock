@@ -1,18 +1,34 @@
 import React, {Component} from 'react';
 import Sound from 'react-sound';
+import soundfile from './game_over.mp3'
  
-class WorkDoneSound extends React.Component {
+class WorkDoneSound extends Component {
+   constructor(props) {
+    super(props);
+    this.state = {
+      soundOn: true
+    };
+    this.turnOfSound = this.turnOfSound.bind(this);
+    // this.turnOnSound = this.turnOnSound.bind(this);
+  }
+
+  turnOfSound(Sound){
+    // this.setState({soundOn: false});
+  }
+
   render() {
-    return (
-      <Sound
-        url="./game_over.mp3"
+    // console.log(`workDone:${this.props.workDone}\nsoundOn:${this.state.soundOn}`)
+    if(this.props.workDone && this.state.soundOn){
+      return (
+        <Sound
+        url={soundfile}
         playStatus={Sound.status.PLAYING}
-        playFromPosition={300 /* in milliseconds */}
-        onLoading={this.handleSongLoading}
-        onPlaying={this.handleSongPlaying}
-        onFinishedPlaying={this.handleSongFinishedPlaying}
-      />
-    );
+        onFinishedPlaying ={this.turnOfSound()}></Sound>
+      );
+    }
+    else{
+      return(<div></div>)
+    }
   }
 }
 
