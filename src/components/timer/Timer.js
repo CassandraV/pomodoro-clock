@@ -3,6 +3,7 @@ import './Timer.css'
 import WorkDoneSound from '../sounds/WorkDoneSound'
 import BreakDoneSound from '../sounds/BreakDoneSound'
 import Buttons from '../buttons/Buttons'
+import TimeDisplay from '../timeDisplay/TimeDisplay'
 
 class Timer extends Component {
   constructor(props) {
@@ -157,30 +158,23 @@ class Timer extends Component {
   render() {
     return(
       <div>
-        <div className="left">
-          <div className="timer-title">Working Time</div>
-          <div className="time-wrap">
-            <div className="time" onClick={this.decreaseTime}>-</div>
-            <div className="time">{this.secondsToMinutes(this.state.seconds)}</div>
-            <div className="time" onClick={this.increaseTime}>+</div>
-          </div>
+        <div className="work-time">
+          <TimeDisplay 
+            title={'Working Time'}
+            decreaseTime={this.decreaseTime}
+            time={this.secondsToMinutes(this.state.seconds)}
+            increaseTime={this.increaseTime}/>
           <WorkDoneSound workDone={this.state.workDoneSound} stopSound={this.stopWorkDoneSound}></WorkDoneSound>
         </div>
-        <div>
-          <div className="timer-title">Break Time</div>
-          <div className="time-wrap">
-            <button className="time" onClick={this.decreaseBreakTime}>-</button>
-            <div className="time">{this.secondsToMinutes(this.state.breakTime)}</div>
-            <button className="time" onClick={this.increaseBreakTime}>+</button>
-          </div>
+        <div className="break-time">
+          <TimeDisplay 
+            title={'Break Time'}
+            decreaseTime={this.decreaseBreakTime}
+            time={this.secondsToMinutes(this.state.breakTime)}
+            increaseTime={this.increaseBreakTime}/>
           <BreakDoneSound breakDone={this.state.breakDoneSound} stopBreakSound={this.stopBreakDoneSound}></BreakDoneSound>
         </div>
-        {/*<Buttons startTimer={this.startTimer} pauseTimer={this.pauseTimer} resetTimer={this.resetTimer}/>*/}
-        <div className="wrap">
-          <div className="start-button"><button className="btn btn-start" onClick={this.startTimer}>START</button></div>
-          <div className="pause-button"><button className="btn btn-pause" onClick={this.pauseTimer}>PAUSE</button></div>
-          <div className="reset-button"><button className="btn btn-reset" onClick={this.resetTimer}>RESET</button></div>
-        </div>
+        <div className="buttons"><Buttons startTimer={this.startTimer} pauseTimer={this.pauseTimer} resetTimer={this.resetTimer}/></div>
       </div>)
   }
 }
