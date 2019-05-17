@@ -9,7 +9,6 @@ function App() {
         <p>
           A pomodoro-clock! 
         </p>
-        {/*<img src={logo} className="App-logo" alt="logo" />*/}
       </header>
       <Timer></Timer>
     </div>

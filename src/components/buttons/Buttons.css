@@ -12,7 +12,6 @@
     overflow: hidden;
     font-weight: bold;
     background-color: #333341;
-    /*background-color: #ACB03C;*/
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
     border-bottom: solid 1px #F6F5F3;
     font-family: 'Courier';
@@ -33,19 +32,3 @@
 .btn-wrap{
   padding-bottom: 20px;
 }
-/*.wrap{
-  float: right;
-  padding: 0px 30px 0px 0px;
-  background: none;
-}*/
-/*.start-button{
-  float: left;
-  padding-left: 200px;
-}
-.pause-button{
-  display: inline-block;
-}
-.reset-button{
-  float: right;
-  padding-right: 200px;
-}*/
