@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Timer from '../timer/Timer'
 
@@ -8,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Another pomodoro-clock!
+          A pomodoro-clock! 
         </p>
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
       </header>

@@ -11,49 +11,49 @@
     vertical-align: middle;
     overflow: hidden;
     font-weight: bold;
-    background-color: #ACB03C;
-    /*background-image: -webkit-linear-gradient(#e8e8e8 0%, #d6d6d6 100%);*/
-    /*background-image: linear-gradient(#e8e8e8 0%, #d6d6d6 100%);*/
-    /*text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);*/
+    background-color: #231628;
+    /*background-color: #ACB03C;*/
     box-shadow: inset 0 2px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
     border-bottom: solid 1px #F6F5F3;
     font-family: 'Courier';
+    transition: all 800ms ease-in-out;
 }
-.btn .fa {
-    line-height: 80px;
-}
-.btn:active {/*onClick*/
-    /*background-image: -webkit-linear-gradient(#efefef 0%, #d6d6d6 100%);*/
+.btn:focus {outline:0;}
+
+.btn:active {
     background-color: #BEA293;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
     border-bottom: none;
 }
-.btn-start{
-  background-color: #ACB03C;
+.btn:hover {
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+  transform: rotate(360deg);
+}
+/*.btn-start{
+  background-color: #231628;
 }
 .btn-pause{
-  background-color: #94A9B9;
+  background-color: #231628;
 }
 .btn-reset{
-  background-color: #C73F69;
-}
+  background-color: #231628;
+}*/
 .wrap{
   /*text-align:center*/
-  padding: 50px 0px 30px 0px;
+  padding: 150px 0px 0px 0px;
+  background: none;
 }
 .start-button{
   float: left;
-  padding-left: 100px;
+  padding-left: 200px;
 }
 .pause-button{
   display: inline-block;
 }
 .reset-button{
   float: right;
-  padding-right: 100px;
-}
-.timer {
-  color: #61dafb;
+  padding-right: 200px;
 }
 .time-wrap{
   width: 100%;
@@ -64,7 +64,7 @@
 .time{
   display: inline-block;
   text-decoration: none;
-  color: #F6F5F3;/*IconColor*/
+  color: #333341;/*IconColor*/
   font-size: 30px;
   text-align: center;
   vertical-align: middle;
@@ -72,22 +72,12 @@
   font-weight: bold;
   font-family: 'Courier';
   padding-right: 10px;
-  padding-left: 10px
- /* display: inline-block;
-  text-decoration: none;
-  color: #F6F5F3;
-  width: 200px;
-  height: 200;
-  line-height: 80px;
-  font-size: 50px;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  font-weight: bold;
-  font-family: 'Courier';*/
+  padding-left: 10px;
+  background: none;
+  border: none;
 }
 .timer-title{
-  color: #F6F5F3;
+  color: #333341;
   font-size: 30px;
   font-family: 'Courier';
 }
@@ -96,11 +86,5 @@
   text-align: center;
   width:50%;
   position: relative; 
+  background: none;
 }
-
-/*.right{
-  float: right;
-  text-align: center;
-  width:50%;
-  position: relative; 
-}*/

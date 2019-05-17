@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import Sound from 'react-sound';
-import soundfile from './ding_ding_ding.mp3'
+import soundfile from './game_over.mp3'
  
 class WorkDoneSound extends Component {
   render() {
-    if(this.props.workDone){
+    console.log(`breakDone:${this.props.breakDone}`)
+    if(this.props.breakDone){
       return (
         <Sound
         url={soundfile}
         playStatus={Sound.status.PLAYING}
-        onFinishedPlaying ={this.props.stopSound}></Sound>
+        onFinishedPlaying ={this.props.stopBreakSound}></Sound>
       );
     }
     else{
